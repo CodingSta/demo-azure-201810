@@ -23,6 +23,7 @@ fn_20 = max_length_validator(20)
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
+    summary = models.CharField(max_length=50)
     desc = models.TextField(blank=True)
     price = models.PositiveIntegerField()
     is_publish = models.BooleanField(default=False)
