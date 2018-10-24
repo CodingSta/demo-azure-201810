@@ -11,12 +11,19 @@ min_length_3 = MinLengthValidator(3)
 
 
 # TODO: Item.name 필드에 최대길이 10자 제한
+def max_length_validator(max_length):
+    def fn(value):
+        if len(value) > max_length:
+            raise forms.ValidationError('최대 10자 !!!')
+    return fn
 
+fn_10 = max_length_validator(10)
+fn_20 = max_length_validator(20)
 
 
 class Item(models.Model):
     name = models.CharField(max_length=100,
-                            validators=[min_length_3])
+                            validators=[min_length_3, max_length_validator(10)])
     desc = models.TextField(blank=True)
     price = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
