@@ -4,6 +4,10 @@
     {% for post in post_list %}
         <li>
             {{ post.title }}
+
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" style="max-width: 200px;"/>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>
