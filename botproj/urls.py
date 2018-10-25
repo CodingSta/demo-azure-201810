@@ -14,6 +14,8 @@ urlpatterns = [
     path('blog/<int:pk>/edit/', post_edit),
     path('blog/<int:pk>/delete/', post_delete),
     path('shop/', item_list),
+
+    path('plusfriend/', include('plusfriend.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
