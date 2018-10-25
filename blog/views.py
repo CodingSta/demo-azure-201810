@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from .models import Post
 
@@ -12,3 +12,12 @@ from .models import Post
 
 
 post_list = ListView.as_view(model=Post)
+
+
+# def post_detail(request, pk):
+#     post = Post.objects.get(pk=pk)
+#     return render(request, 'blog/post_detail.html', {
+#         'post': post,
+#     })
+
+post_detail = DetailView.as_view(model=Post)

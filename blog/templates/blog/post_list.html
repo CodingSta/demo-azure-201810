@@ -3,7 +3,10 @@
 <ul>
     {% for post in post_list %}
         <li>
-            {{ post.title }}
+            {# URL Reverse 기능을 활용하는 것이 더 좋다. #}
+            <a href="/blog/{{ post.pk }}/">
+                {{ post.title }}
+            </a>
 
             {% if post.photo %}
                 <img src="{{ post.photo.url }}" style="max-width: 200px;"/>
