@@ -1,6 +1,9 @@
+{% extends "blog/layout.html" %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    정말 삭제할래? 낙장불입 <!DOCTYPE html>
-    <input type="submit" value="후회없어" />
-</form>
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        정말 삭제할래? 낙장불입 <!DOCTYPE html>
+        <input type="submit" value="후회없어" />
+    </form>
+{% endblock %}
