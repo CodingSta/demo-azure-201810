@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.shortcuts import redirect, render
 from .models import Post
 from .forms import PostForm
@@ -45,3 +45,7 @@ post_new = CreateView.as_view(model=Post,
 post_edit = UpdateView.as_view(model=Post,
                                form_class=PostForm,
                                success_url='/blog/')
+
+
+post_delete = DeleteView.as_view(model=Post,
+                                 success_url='/blog/')
